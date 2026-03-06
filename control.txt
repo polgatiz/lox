@@ -3,6 +3,6 @@
 #HACK|CUENTA COMPROMETIDA|PEKU MEXICO TE TIENE
 #INFO
 #VOICE|Hola jugar en servidores piratas no es para niños... Sus Robux estan siendo transferidos... a mi cuenta
-GHOST|Peku Mexico esta escribiendo en tu PC...
+#GHOST|Peku Mexico esta escribiendo en tu PC...
 #MINIMIZE
 OFF
