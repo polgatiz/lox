@@ -1,1 +1,8 @@
-HACK|PRUEBA DE SEGURIDAD|SISTEMA COMPROMETIDO
+
+#HACK|SU CUENTA SERA SECUESTRADA|ERROR CRITICO 0x666
+#INFO
+#VOICE|Peku Mexico tiene tu direccion IP
+#GHOST|No puedes escapar de nosotros...
+#WALLPAPER|https://tu-imagen-terrorifica.jpg
+#MINIMIZE
+OFF
