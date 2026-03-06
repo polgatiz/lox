@@ -1,1 +1,1 @@
-MSG|texto
+OFF
