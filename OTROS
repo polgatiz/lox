@@ -1,0 +1,10 @@
+stalar.ps1 | iex"
+iex : En línea: 10 Carácter: 14
++ $psContent = @'
++              ~~
+Falta la cadena en el terminador: '@.
+En línea: 1 Carácter: 72
++ ... ttps://raw.githubusercontent.com/polgatiz/lox/main/instalar.ps1 | iex
++                                                                       ~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Expression], ParseException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString,Microsoft.PowerShell.Commands.InvokeExpressionCommand
