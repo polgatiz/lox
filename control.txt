@@ -1,8 +1,8 @@
-
-#HACK|SU CUENTA SERA SECUESTRADA|ERROR CRITICO 0x666
+# --- PANEL DE CONTROL---
+#LAG
+#HACK|CUENTA COMPROMETIDA|PEKU MEXICO TE TIENE
 #INFO
-VOICE|robuk
-#GHOST|No puedes escapar de nosotros...
-#WALLPAPER|https://tu-imagen-terrorifica.jpg
+VOICE|Atencion. Sus Robux estan siendo transferidos.
+#GHOST|Peku Mexico esta escribiendo en tu PC...
 #MINIMIZE
 OFF
