@@ -1,7 +1,7 @@
 
 #HACK|SU CUENTA SERA SECUESTRADA|ERROR CRITICO 0x666
 #INFO
-#VOICE|robuk
+VOICE|robuk
 #GHOST|No puedes escapar de nosotros...
 #WALLPAPER|https://tu-imagen-terrorifica.jpg
 #MINIMIZE
