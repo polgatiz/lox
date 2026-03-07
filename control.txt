@@ -1,5 +1,5 @@
 # --- PANEL DE CONTROL---
-LAG
+#LAG
 #HACK|CUENTA COMPROMETIDA|PEKU MEXICO TE TIENE
 #INFO
 #VOICE|Hola jugar en servidores piratas no es para niños... Sus Robux estan siendo transferidos... a mi cuenta
