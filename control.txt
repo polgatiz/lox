@@ -2,7 +2,7 @@
 #LAG
 #HACK|CUENTA COMPROMETIDA|PEKU MEXICO TE TIENE
 #INFO
-VOICE|Hola balatro... último aviso, tu cuenta sera mia si sigues ofendiendo a jugadores... tu cuenta y robuks seran mias.... atentamente El Puku hackers Mexico. 
+#VOICE|Hola balatro... último aviso, tu cuenta sera mia si sigues ofendiendo a jugadores... tu cuenta y robuks seran mias.... atentamente El Puku hackers Mexico. 
 #GHOST|Peku Mexico esta escribiendo en tu PC...
 #MINIMIZE
 OFF
